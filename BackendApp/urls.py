@@ -1,0 +1,31 @@
+from django.urls import path
+from BackendApp import views
+urlpatterns = [
+    path('homepage/', views.homepage, name='homepage'),
+    path('Adminpage/', views.Adminpage, name='Adminpage'),
+    path('Admindatabase/', views.Admindatabase, name='Admindatabase'),
+    path('displayadmin/', views.displayadmin, name='displayadmin'),
+    path('editadmin/<int:dataid>/', views.editadmin, name='editadmin'),
+    path('updateadmin/<int:dataid>/', views.updateadmin, name='updateadmin'),
+    path('deleteadmin/<int:dataid>/', views.deleteadmin, name='deleteadmin'),
+    path('Logindetails/', views.Logindetails, name='Logindetails'),
+    path('adminlogin/', views.adminlogin, name='adminlogin'),
+    path('customerlogout/', views.customerlogout, name='customerlogout'),
+    path('categorypage/', views.categorypage, name='categorypage'),
+    path('categorypagedb/', views.categorypagedb, name='categorypagedb'),
+    path('displaycategory/', views.displaycategory, name='displaycategory'),
+    path('editcategorypage/<int:dataid>/', views.editcategorypage, name='editcategorypage'),
+    path('updatecategorypage/<int:dataid>/', views.updatecategorypage, name='updatecategorypage'),
+    path('deletecategory/<int:dataid>/', views.deletecategory, name='deletecategory'),
+    path('vehicleadd/', views.vehicleadd, name='vehicleadd'),
+    path('vehiclepagedb/', views.vehiclepagedb, name='vehiclepagedb'),
+    path('displayproduct/',views.displayproduct,name='displayproduct'),
+    path('editproduct/<int:dataid>/', views.editproduct, name='editproduct'),
+    path('updateproduct/<int:dataid>/', views.updateproduct, name='updateproduct'),
+    path('deleteproduct/<int:dataid>/', views.deleteproduct, name='deleteproduct'),
+    path('displaycontactdb/', views.displaycontactdb, name='displaycontactdb'),
+    path('delcontact/<int:dataid>/', views.delcontact, name='delcontact'),
+    path('displaybooking/', views.displaybooking, name='displaybooking'),
+    path('delbooking/<int:dataid>/', views.delbooking, name='delbooking'),
+
+]

@@ -1,0 +1,61 @@
+<!doctype html>
+{% extends 'Home.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Booking Details</title>
+</head>
+<body>
+            <div class="card card-primary" style="width:1200px; margin-top:10px; margin-left:255px;">
+              <div class="card-header">
+                <h3 class="card-title">User Booking Details</h3>
+
+
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0" style="height: 300px;">
+                <table class="table table-head-fixed text-nowrap">
+                    <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">EmailID</th>
+                    <th scope="col">Mobile Number</th>
+                      <th scope="col">Address</th>
+                    <th scope="col">Vehicle Details</th>
+                      <th scope="col">Delete</th>
+
+
+                  </tr>
+                </thead>
+                <tbody>
+                 {% for i in data%}
+                  <tr>
+
+                    <td>{{i.Name}}</td>
+                    <td>{{i.EmailID}}</td>
+                    <td>{{i.Number}}</td>
+                      <td>{{i.Address}}</td>
+                    <td>{{i.VehicleDetails}}</td>
+
+                                    <td>
+                                <form action="{% url 'delbooking' dataid=i.id %}">
+                                    <button type="submit" class="btn btn-primary">Delete</button>
+                                </form>
+                            </td>
+                          </tr>
+
+                  </tr>
+                {% endfor %}
+                </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+</body>
+</html>
+{% endblock %}

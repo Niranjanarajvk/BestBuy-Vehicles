@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="background-color:lavender;">
+ <div class="loader-wrapper" style="margin-top:200px;"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+	<div class="card card-authentication1 mx-auto my-5"  style=" width:600px; margin-left:400px; background-color:white;">
+		<div class="card-body" style=" height:400px;" >
+		 	<div class="text-center">
+<!--		 		<img src="{% static 'dist/img/AdminLTELogo.png' %}" alt="logo icon" class="brand-image img-circle elevation-3" style="margin-top:22px;margin-left:262px;width: 51px; opacity: .8">-->
+                <h3   style="font-family: cursive;text-align:center; color:darkred; font-size:40px; ">BestBuy Motors</h3>
+		 	</div>
+
+		    <form method="post" action="{% url 'adminlogin' %}" enctype="multipart/form-data" style="text-align:center; font-size:20px; color:white; ">
+                {% csrf_token %}
+			  <div class="form-group">
+			  <label for="exampleInputUsername" class="sr-only">Username</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="text" id="exampleInputUsername" class="form-control input-shadow" placeholder="Enter Username" name="user" style="width:50%;  padding:10px; ">
+				  <div class="form-control-position">
+					  <i class="icon-user"></i>
+				  </div>
+			   </div>
+			  </div>
+			  <div class="form-group">
+			  <label for="exampleInputPassword" class="sr-only">Password</label>
+			   <div class="position-relative has-icon-right">
+				  <input type="password" id="exampleInputPassword" class="form-control input-shadow" placeholder="Enter Password" name="password" style="width:50%;  padding:10px;">
+				  <div class="form-control-position">
+					  <i class="icon-lock"></i>
+				  </div>
+			   </div>
+			  </div>
+			<div class="form-row">
+			 <div class="form-group col-6">
+			   <div class="icheck-material-white">
+                <input type="checkbox" id="user-checkbox" checked="" />
+                <label for="user-checkbox">Remember me</label>
+			  </div>
+			 </div>
+<!--			 <div class="form-group col-6 text-right">-->
+<!--			  <a href="reset-password.html">Reset Password</a>-->
+<!--			 </div>-->
+			</div>
+			 <button type="submit" class="btn btn-light btn-block">Sign In</button>
+<!--			  <div class="text-center mt-3">Sign In With</div>-->
+
+<!--			 <div class="form-row mt-4">-->
+<!--			  <div class="form-group mb-0 col-6">-->
+<!--			   <button type="button" class="btn btn-light btn-block"><i class="fa fa-facebook-square"></i> Facebook</button>-->
+<!--			 </div>-->
+<!--			 <div class="form-group mb-0 col-6 text-right">-->
+<!--			  <button type="button" class="btn btn-light btn-block"><i class="fa fa-twitter-square"></i> Twitter</button>-->
+<!--			 </div>-->
+<!--			</div>-->
+
+			 </form>
+		   </div>
+		  </div>
+
+	     </div>
+
+
+
+</body>
+</html>

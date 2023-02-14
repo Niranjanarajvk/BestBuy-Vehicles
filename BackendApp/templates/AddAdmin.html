@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% extends 'Home.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+              <div class="card card-primary"style="width:70%; margin-top:10px; margin-left:20%;">
+              <div class="card-header">
+                <h3 class="card-title">Add Admin</h3>
+              </div><br>
+
+              <!-- General Form Elements -->
+              <form method="post" action="{% url 'Admindatabase' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row mb-3">
+                  <label  class="col-sm-2 col-form-label">Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="name" placeholder="Name">
+                  </div>
+                </div>
+                   <div class="row mb-3">
+                  <label  class="col-sm-2 col-form-label">MobileNumber</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="number" placeholder="MobileNumber">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label  class="col-sm-2 col-form-label">EmailID</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" name="email" placeholder="EmailID">
+                  </div>
+                </div>
+                  <div class="row mb-3">
+                  <label  class="col-sm-2 col-form-label">UserName</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username" placeholder="UserName">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="pwd" placeholder="Password">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">ConfirmPassword</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" name="confpwd" placeholder="ConfirmPassword">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label  class="col-sm-2 col-form-label">File Upload</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="file" id="formFile" name="image">
+                  </div>
+                </div>
+
+                  <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label">Submit</label>
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                  </div>
+                </div>
+
+              </form><!-- End General Form Elements -->
+
+            </div>
+          </div>
+
+</body>
+</html>
+{% endblock %}

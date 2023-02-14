@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends 'Home.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form style="width:100%;margin-left:300px; margin-top:50px;" method="post" action="{% url 'updatecategorypage' dataid=data.id %}" enctype="multipart/form-data">
+    {% csrf_token %}
+       <div class="card card-primary"style="width:70%; margin-top:10px; ">
+              <div class="card-header">
+                <h3 class="card-title">Edit Category</h3>
+              </div><br>
+           <hr>
+            <form>
+                <div class="form-group">
+            <label for="input-1">Vehicle Number</label>
+            <input type="number" class="form-control" id="input-1" placeholder="Vehicle Number"  name="number"  value="{{data.VehicleNumber}}" >
+           </div>
+                <div class="form-group">
+            <label for="input-3">Vehicle Type</label>
+            <input type="text" class="form-control" id="input-3" placeholder="Vehicle Type " name="type" value="{{data.VehicleType}}">
+           </div>
+           <div class="form-group">
+            <label for="input-2">Vehicle Model</label>
+            <input type="text" class="form-control" id="input-2" placeholder="Vehicle Model" name="model" value="{{data.VehicleModel}}">
+           </div>
+               <div class="form-group">
+            <label for="input-4">Vehicle Description</label>
+            <input type="text" class="form-control" id="input-4" placeholder="Vehicle Description" name="desc" value="{{data.VehicleDescription}}">
+           </div>
+                 <div class="row mb-3">
+                  <label  class="col-sm-2 col-form-label">File Upload</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="file" id="formFile" name="image" value="{{data.FileUpload}}">
+                  </div>
+                </div>
+
+           <div class="form-group">
+            <button type="submit" class="btn btn-primary px-5"><i class="icon-lock"></i> Update</button>
+          </div>
+          </form>
+         </div>
+
+         </div>
+      </div>
+</form>
+
+</body>
+</html>
+{% endblock %}

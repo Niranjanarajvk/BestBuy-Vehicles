@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% extends 'Home.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="width:80%;margin-left:300px; ">
+<div class="card">
+            <div class="card-primary ">
+              <h5 class="card-title " >Category Details</h5>
+			  <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">VehicleNumber</th>
+                    <th scope="col"> VehicleType</th>
+                      <th scope="col">VehicleModel</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Edit</th>
+                      <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in data %}
+                  <tr>
+
+                            <td> {{i.VehicleNumber}} </td>
+                             <td>{{i.VehicleType}}</td>
+                             <td>{{i.VehicleModel}}</td>
+                            <td>{{i.VehicleDescription}}</td>
+
+                             <td>
+                             <img src="{{ i.Image.url }}" width="50px" height="50px">
+                             </td>
+
+                         <td>
+                              <form action="{% url 'editcategorypage'  dataid=i.id %}">
+                                {% csrf_token %}
+                              <button type="submit" class="btn btn-primary">Edit</button>
+                            </form>
+                              </td>
+                        <td>
+                                <form action="{% url 'deletecategory' dataid=i.id %}">
+                                    <button type="submit" class="btn btn-primary">Delete</button>
+                                </form>
+                            </td>
+
+                  </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            </div>
+          </div>
+
+</body>
+</html>
+{% endblock %}
